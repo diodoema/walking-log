@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listGender">
+        <item>Man</item>
+        <item>Woman</item>
+    </string-array>
+
+    <string-array name="valueGender">
+        <item>0.415</item>
+        <item>0.413</item>
+    </string-array>
+</resources>

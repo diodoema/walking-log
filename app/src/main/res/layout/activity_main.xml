@@ -1,0 +1,161 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/colorPrimary">
+
+            <LinearLayout
+                android:id="@+id/mainDashboard"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvStep"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="99sp"
+                    android:textColor="@color/colorWhite"/>
+
+                <TextView
+                    android:id="@+id/tvPercent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Target: 0,00%"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorWhite"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/infoDashboard"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:id="@+id/tableLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="2dp"
+                    android:background="#eaeae1">
+
+                    <TableRow
+                        android:id="@+id/row1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="1dp">
+
+                        <TextView
+                            android:id="@+id/tvDuration"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="1dp"
+                            android:background="#ffffff"
+                            android:padding="20dp"
+                            android:drawableStart="@drawable/ic_timer"
+                            android:text="Duration\n00:00:00 sec" />
+
+                        <TextView
+                            android:id="@+id/tvDistance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="1dp"
+                            android:background="#ffffff"
+                            android:padding="20dp"
+                            android:drawableStart="@drawable/ic_binoculars"
+                            android:text="Distance\n0,00 km" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/row2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="1dp">
+
+                        <TextView
+                            android:id="@+id/tvCalorie"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="1dp"
+                            android:background="#ffffff"
+                            android:padding="20dp"
+                            android:drawableStart="@drawable/ic_flame"
+                            android:text="Calorie Burn\n0 cal" />
+
+                        <TextView
+                            android:id="@+id/tvFrequency"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="1dp"
+                            android:background="#ffffff"
+                            android:padding="20dp"
+                            android:drawableStart="@drawable/ic_loop"
+                            android:text="Frequency\n0 step/hr" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp">
+
+                    <ToggleButton
+                        android:id="@+id/tbStartStop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:padding="8dp"
+                        android:background="@drawable/toggle_selector"
+                        android:textOff="Start"
+                        android:textOn="Stop"
+                        android:textSize="24sp"
+                        android:textColor="@color/colorWhite"
+                        android:onClick="serviceOnOff"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabMapView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_dialog_map"
+        app:layout_anchor="@id/mainDashboard"
+        app:layout_anchorGravity="bottom|end"
+        android:onClick="trackView"/>
+
+</android.support.design.widget.CoordinatorLayout>

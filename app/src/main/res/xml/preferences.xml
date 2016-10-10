@@ -1,0 +1,52 @@
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+            android:title="PERSONAL DATA">
+
+        <ListPreference
+            android:key="pref_key_gender"
+            android:title="Gender"
+            android:summary="Select one to define who you are"
+            android:defaultValue="@string/default_gender"
+            android:entries="@array/listGender"
+            android:entryValues="@array/valueGender" />
+
+        <EditTextPreference
+            android:key="pref_key_height"
+            android:title="Height"
+            android:summary="Input your height in cm to help us give correct information for you"
+            android:dialogTitle="Height (cm)"
+            android:defaultValue="@string/default_height"
+            android:inputType="number" />
+
+        <EditTextPreference
+            android:key="pref_key_weight"
+            android:title="Weight"
+            android:summary="Input your weight in kg to help us give correct information for you"
+            android:dialogTitle="Weight (kg)"
+            android:defaultValue="@string/default_weight"
+            android:inputType="number" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="ADDITIONAL SETTING">
+
+        <EditTextPreference
+            android:key="pref_key_goal"
+            android:title="Goal"
+            android:summary="Input how much your step goal"
+            android:dialogTitle="Step"
+            android:defaultValue="@string/default_goal"
+            android:inputType="number" />
+
+        <CheckBoxPreference
+            android:key="pref_key_track"
+            android:title="Show Track"
+            android:defaultValue="false"
+            android:summary="if you stay on the same place for a long time, disable this option" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
